@@ -3,6 +3,6 @@ package entities;
 public interface CookBook {
 
     Recipe findRecipeByDishName(String dishName);
-    //void addRecipe();
+    void addRecipe(String dishName, Recipe recipe);
 
 }

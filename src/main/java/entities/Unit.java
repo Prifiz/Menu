@@ -2,7 +2,7 @@ package entities;
 
 public enum Unit {
 
-    PCS, GRAMS, PARTS, BOWLS;
+    PCS, GRAMS, PARTS, BOWLS, ML;
 
     private String name;
     private String comment;
