@@ -23,7 +23,7 @@ public class SqliteRecipeProcessor implements RecipesProcessor {
         // SQLite connection string
         // FIXME change for recipes
         // SQL statement for creating a new table
-        String sql = "CREATE TABLE IF NOT EXISTS employees (\n"
+        String sql = "CREATE TABLE IF NOT EXISTS recipes (\n"
                 + " id integer PRIMARY KEY,\n"
                 + " name text NOT NULL,\n"
                 + " capacity real\n"
@@ -41,10 +41,10 @@ public class SqliteRecipeProcessor implements RecipesProcessor {
         String sql = "INSERT INTO employees(name, capacity) VALUES(?,?)";
 
         try {
-            PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setString(1, name);
-            pstmt.setDouble(2, capacity);
-            pstmt.executeUpdate();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, name);
+            preparedStatement.setDouble(2, capacity);
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -53,7 +53,6 @@ public class SqliteRecipeProcessor implements RecipesProcessor {
 
     private void selectAll() {
         String sql = "SELECT * FROM employees";
-
         try {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
@@ -66,7 +65,6 @@ public class SqliteRecipeProcessor implements RecipesProcessor {
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-
         }
     }
 

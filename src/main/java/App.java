@@ -1,8 +1,6 @@
 import db.Connector;
 import db.ConnectorFactory;
 import db.RecipesProcessor;
-import entities.CookBook;
-import entities.DefaultCookBook;
 import entities.Ingredient;
 import entities.Quantity;
 import entities.Recipe;
@@ -21,17 +19,7 @@ public class App {
         dbConnector.initDatabase();
 
         RecipesProcessor recipesProcessor = dbConnector.getRecipesProcessor();
-        recipesProcessor.addRecipe("", new Recipe());
 
-        List<Recipe> tesRecipes = (List<Recipe>) recipesProcessor.findByDishname("tea");
-
-
-
-        // TODO store actions (kind of DSL: "boil", "bake", "mug", etc., recipe constructor)
-
-
-
-        CookBook cookBook = new DefaultCookBook();
         Recipe teaRecipe = new Recipe().withTimeToCook(5);
         teaRecipe.addIngredient(new Ingredient("water"), new Quantity(100.0f, Unit.ML));
         teaRecipe.addIngredient(new Ingredient("teabag"), new Quantity(1.0f, Unit.PCS));
@@ -40,8 +28,12 @@ public class App {
         teaRecipe.addInstructionStep("Put teabag into mug");
         teaRecipe.addInstructionStep("Wait for 5 minutes");
         teaRecipe.addInstructionStep("Enjoy");
-        cookBook.addRecipe("5 minutes tea", teaRecipe);
 
+        recipesProcessor.addRecipe("5 minutes tea", teaRecipe);
+
+        List<Recipe> teaRecipes = (List<Recipe>) recipesProcessor.findByDishname("tea");
+
+        // TODO store actions (kind of DSL: "boil", "bake", "mug", etc., recipe constructor)
 
         Quantity neededDishQuantity = new Quantity(1000.0f, Unit.GRAMS);
 
