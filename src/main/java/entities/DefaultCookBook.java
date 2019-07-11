@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ public class DefaultCookBook implements CookBook {
     }
 
 
-    public Recipe findRecipeByDishName(String dishName) {
+    public Collection<Recipe> findRecipesByDishName(String dishName) {
         return null;
     }
 

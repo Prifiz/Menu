@@ -2,6 +2,8 @@ package entities;
 
 public enum Unit {
 
+    // TODO add converter!
+
     PCS, GRAMS, PARTS, BOWLS, ML;
 
     private String name;

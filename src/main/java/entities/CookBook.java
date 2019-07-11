@@ -1,8 +1,10 @@
 package entities;
 
+import java.util.Collection;
+
 public interface CookBook {
 
-    Recipe findRecipeByDishName(String dishName);
+    Collection<Recipe> findRecipesByDishName(String dishName);
     void addRecipe(String dishName, Recipe recipe);
 
 }

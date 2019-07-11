@@ -10,7 +10,7 @@ public class Recipe {
 
     private int averageTimeMins = 0;
     private List<RecipeItem> ingredients;
-    // devices, dishes (plates, teapots, etc.)
+    // TODO devices, dishes (plates, teapots, etc.)
     private Quantity outputQuantity;
     private CookingInstruction instruction;
 
