@@ -1,0 +1,16 @@
+FoodTypes (e.g. 1 - Vegetable)
+  id
+  name
+Product (e.g. 1 - 1(Vegetable) - Tomato)
+  id
+  typeId
+  name
+Units (e.g. 1 - kg - kilogram)
+  id
+  abbr
+  fullName
+Dishes (e.g. 1 - tea)
+  id
+  name
+
+or... json & mongoDB...
