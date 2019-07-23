@@ -1,0 +1,18 @@
+{
+	"cookbook": [
+		{
+			"dish": "tea",
+			"recipes": [
+				"<recipe1_Id>",
+				"<recipe2_Id>",
+				"..."
+			]
+		},
+		{
+			"dish": "...",
+			"recipes": [
+				"..."
+			]
+		}
+	]
+}

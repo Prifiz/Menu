@@ -1,0 +1,5 @@
+{
+	"id": "productId",
+	"typeId": "<ingredientTypeId>",
+	"name": "<name>"
+}

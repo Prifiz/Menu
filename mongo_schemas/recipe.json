@@ -1,0 +1,27 @@
+{
+	"id": "<recipeId>",
+	"recipeName": "<recipeName>",
+	"ingredients": [
+		{
+			"productId": "<productId>",
+			"quantity": {
+				"number": "<number>",
+				"unitId": "<unitId>"
+			}
+		},
+		{}
+	],
+	"averageTimeToCookMins": "<averageTimeToCookMins>",
+	"outputQuantity": {
+		"number": "<number>",
+		"unitId": "<unitId>"
+	},
+	"cookingInstructions": {
+		"steps": [
+			"<step1>",
+			"<step2>",
+			"..."
+		],
+		"comment": "<comment>"
+	}
+}
