@@ -1,5 +1,5 @@
-import mongo.IngredientType;
-import mongo.IngredientTypeRepository;
+package mongo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,6 +19,10 @@ public class SpringApp implements CommandLineRunner {
     public void run(String... args) throws Exception {
         repository.deleteAll();
         repository.save(new IngredientType("1", "Fruit"));
+
+        repository.findAll().forEach(
+                System.out::println
+        );
     }
 
 }
