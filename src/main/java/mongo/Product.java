@@ -3,24 +3,24 @@ package mongo;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-
-import java.util.UUID;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
+@Document
 public class Product {
 
     @Id
-    private UUID id;
-
-    private UUID ingredientTypeId;
     private String name;
+
+    @DBRef
+    private ProductType productType;
 
     public Product() {}
 
-    public Product(UUID id, UUID ingredientTypeId, String name) {
-        this.id = id;
-        this.ingredientTypeId = ingredientTypeId;
+    public Product(ProductType productType, String name) {
+        this.productType = productType;
         this.name = name;
     }
 }

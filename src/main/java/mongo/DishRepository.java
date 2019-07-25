@@ -2,6 +2,8 @@ package mongo;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface DishRepository extends MongoRepository<Dish, String> {
+import java.util.Optional;
 
+public interface DishRepository extends MongoRepository<Dish, String> {
+    Optional<Dish> findById(String id);
 }

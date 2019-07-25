@@ -3,30 +3,31 @@ package mongo;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.UUID;
 
 @Getter
 @Setter
-public class IngredientType {
+@Document
+public class ProductType {
 
     @Id
-    private UUID id;
-
     private String name;
 
-    public IngredientType() {}
+    public ProductType() {
+        super();
+    }
 
-    public IngredientType(UUID id, String name) {
-        this.id = id;
+    public ProductType(String name) {
+        super();
         this.name = name;
     }
 
     @Override
     public String toString() {
-        return "IngredientType{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+        return "ProductType{" +
+                "name='" + name + '\'' +
                 '}';
     }
 }

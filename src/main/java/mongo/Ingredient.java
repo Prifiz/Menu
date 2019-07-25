@@ -2,18 +2,23 @@ package mongo;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.UUID;
 
 @Getter
 @Setter
+@Document
 public class Ingredient {
 
-    private UUID productId;
+    @DBRef
+    private Product product;
+
     private Quantity quantity;
 
-    public Ingredient(UUID productId, Quantity quantity) {
-        this.productId = productId;
+    public Ingredient(Product product, Quantity quantity) {
+        this.product = product;
         this.quantity = quantity;
     }
 }
